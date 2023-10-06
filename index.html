@@ -21,12 +21,72 @@
 
 <body>
 
+    
+
     <div class="header-image">
         <img src="images\bg-header-desktop.svg" alt="">
     </div>
 
     <div class="job-listings" id = "job-listings-container">
 
+    </div>
+
+    <div id="add-job-button">
+
+        <button class="button" type="button">
+            <span class="button__text">Add Job</span>
+            <span class="button__icon"><svg class="svg" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></span>
+          </button>
+
+    </div>
+
+    <!-- Popup Form -->
+    <div id="add-job-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="close-popup">&times;</span>
+            <h2>Add a New Job</h2>
+            <form id="job-form">
+                <label for="company-name">Company:</label>
+                <input type="text" id="company-name" name="company" required>
+
+                <label for="logo">Logo:</label>
+                <input type="file" id="logo" name="logo" accept="image/*" required>
+
+                <label for="position">Position:</label>
+                <input type="text" id="position" name="position" required>
+
+                <label for="role">Role:</label>
+                <input type="text" id="role" name="role" required>
+
+                <label for="level">Level:</label>
+                <input type="text" id="level" name="level" required>
+
+                <label for="postedAt">Posted At:</label>
+                <input type="text" id="postedAt" name="postedAt" required>
+
+                <label for="contract">Contract:</label>
+                <select id="contract" name="contract">
+                    <option value="Full Time">Full Time</option>
+                    <option value="Part Time">Part Time</option>
+                </select>
+
+                <label for="location">Location:</label>
+                <select id="location" name="location">
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Germany">Germany</option>
+                    <option value="UK">UK</option>
+                </select>
+
+                <label for="languages">Languages:</label>
+                <input type="text" id="languages" name="languages" required>
+
+                <label for="tools">Tools:</label>
+                <input type="text" id="tools" name="tools" required>
+
+                <button type="submit">Add Job</button>
+            </form>
+        </div>
     </div>
     
 </body>
