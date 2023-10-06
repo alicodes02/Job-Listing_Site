@@ -37,6 +37,6 @@ $(document).ready(function () {
     });
   })
   .fail(function (error) {
-    console.error('Error loading data:', error);
+    alert('Error loading data:', error);
   });
 });
