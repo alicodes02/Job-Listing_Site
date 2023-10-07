@@ -1,16 +1,13 @@
 $(document).ready(function () {
+
   $.getJSON('data.json', function (data) {
 
     const jobListingsContainer = $('#job-listings-container');
-
-    // Loop through the data and create a job listing element for each item
 
     $.each(data, function (index, job) {
 
       const jobListing = $('<div class="job"></div>');
 
-      // Create the HTML structure for the job listing
-      
       jobListing.html(`
         <img src="${job.logo}" class="company-logo" alt="${job.company}">
         <div class="job-details">
@@ -32,10 +29,23 @@ $(document).ready(function () {
         </div>
       `);
 
-      // Append the job listing element to the container
       jobListingsContainer.append(jobListing);
     });
+
+    const searchBar = $("#filter-box");
+    searchBar.hide();
+
+    $(".roles label").click( function()
+      {
+        const labelValue = $(this).text();
+        const filterBox = $("#filter-box");
+        filterBox.show();
+        const filter = `<label class="job-role">${labelValue}</label>`;
+        filterBox.append(filter);
+      }
+    ); 
   })
+
   .fail(function (error) {
     alert('Error loading data:', error);
   });
@@ -44,14 +54,13 @@ $(document).ready(function () {
     $('#add-job-popup').show();
 });
 
-// Add an event listener to close the popup when the close button is clicked
 $('#close-popup').click(function () {
     $('#add-job-popup').hide();
 });
 
-// Add an event listener to handle form submission
+
 $('#job-form').submit(function (e) {
-  e.preventDefault(); // Prevent the default form submission
+  e.preventDefault();
 
   // Get the values from the form fields
   const company = $('#company-name').val();
@@ -65,7 +74,6 @@ $('#job-form').submit(function (e) {
   const languages = $('#languages').val().split(',');
   const tools = $('#tools').val().split(',');
 
-  // Create a new job object with the form values
   const newJob = {
       company,
       logo,
@@ -81,7 +89,6 @@ $('#job-form').submit(function (e) {
 
   console.log(logo);
 
-  // Create a new job listing element for the new job
   const jobListing = $('<div class="job"></div>');
 
   jobListing.html(`
@@ -105,7 +112,6 @@ $('#job-form').submit(function (e) {
       </div>
   `);
 
-  // Append the new job listing element to the container
   $('#job-listings-container').append(jobListing);
 
   // Close the popup
