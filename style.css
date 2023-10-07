@@ -235,3 +235,52 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
+
+/* media qeuries */
+
+/* Styles for small screens (up to 767px wide) */
+@media screen and (max-width: 767px) {
+    
+    .job {
+        width: 95%;
+        height: auto; /* Adjusted to allow content to determine height */
+        margin-top: 8%;
+        position: relative;
+        display: flex; /* Display job content in a column */
+        flex-direction: column;
+        align-items: flex-start; /* Align content to the left */
+    }
+
+    .company-logo {
+        position: relative;
+        display: block;
+        position: relative;
+        bottom: 50%;
+        left: 4%;
+        width: 15%;
+    }
+
+    .job-details {
+        width: 100%; /* Full width */
+        margin-top: 2%; /* Add margin space */
+        padding-left: 5%;
+    }
+
+    .extra-details {
+        margin-top: 3%;
+    }
+
+    .job-roles {
+        justify-content: left;
+        width: 100%;
+        margin-top: 3%; /* Adjusted margin for separation */
+    }
+
+    .job-title{
+        color: black;
+    }
+
+    .roles{
+        justify-content: left;
+    }
+}
