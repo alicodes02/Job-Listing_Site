@@ -46,13 +46,24 @@ body {
 
 .job{
     margin-top: 1%;
-    width: 80%;
+    width: 85%;
     height: 20%;
-    border-radius: 2%;
+    border-radius: 1%;
     background-color: white;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
+}
+
+.job:hover{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.close-button{
+    position: relative;
+    padding-right: 1%;
+    padding-bottom: 8%;
 }
 
 .company-logo{
@@ -63,7 +74,7 @@ body {
 }
 
 .job-details{
-    width: 25%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -71,7 +82,8 @@ body {
 }
 
 .extra-details{
-    margin-top: 3%;
+    width: auto;
+    margin-top: 4%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -96,9 +108,11 @@ body {
 .job-roles{
     display: flex;
     width: 80%;
+    height: 120%;
     align-items: flex-end;
     justify-content: right;
     margin-right: 20px;
+
 }
 
 .roles{
@@ -121,7 +135,7 @@ body {
     padding: 1%;
     color: darkcyan;
     font-weight: bold;
-    border-radius: 2%;
+    border-radius: 5%;
 }
 
 .roles label:hover {
@@ -236,9 +250,55 @@ body {
     cursor: pointer;
 }
 
+/* Styles for the job details popup */
+#job-details-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100; /* Ensure it's on top of other content */
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Close button for the popup */
+#close-job-details-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Additional styling for the content inside the popup */
+#job-details-content {
+    display: flex;
+    flex-direction: column;
+    column-gap: 5%;
+    align-items: left;
+    justify-content: left;
+}
+
 /* media qeuries */
 
 /* Styles for small screens (up to 767px wide) */
+
 @media screen and (max-width: 767px) {
     
     .job {
@@ -282,5 +342,10 @@ body {
 
     .roles{
         justify-content: left;
+    }
+
+    .close-button{
+        margin-left: 90%;
+        margin-top: 5%;
     }
 }

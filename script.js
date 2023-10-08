@@ -27,9 +27,25 @@ $(document).ready(function () {
             ${job.tools.map(tool => `<label class="job-role">${tool}</label>`).join('')}
           </div>
         </div>
+        <img src = "./images/close-icon.png" class = "close-button"> 
       `);
 
       jobListingsContainer.append(jobListing);
+    });
+
+    $(".close-button").click(function() {
+      $(this).closest(".job").hide();
+    });
+
+    $(".job-details").click(function () {
+      const jobDetailsContent = $(this).html();
+      $('#job-details-content').html(jobDetailsContent);
+      $('#job-details-popup').show();1``
+    });
+    
+    // Add a click event handler to close the job details popup
+    $('#close-job-details-popup').click(function () {
+      $('#job-details-popup').hide();
     });
 
     const searchBar = $("#filter-box");
@@ -60,6 +76,7 @@ $('#close-popup').click(function () {
 
 
 $('#job-form').submit(function (e) {
+  
   e.preventDefault();
 
   // Get the values from the form fields
@@ -117,5 +134,7 @@ $('#job-form').submit(function (e) {
   // Close the popup
   $('#add-job-popup').hide();
 });
+
+// Add a click event handler to open the job details popup when a job card is clicked
 
 });
